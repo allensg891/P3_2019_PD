@@ -33,12 +33,14 @@ def move(my_history, their_history, my_score, their_score):
     if len(my_history)==0 or len(my_history)==1:
         return 'c'
     if len(their_history)>=2:
-        if 'bb' in their_history[-2]:
-            return 'b'
-        if 'bc' in their_history[-2]:
-            return 'c'
-        if 'cc' in their_history[-2]:
-            return 'c'
+        if 'b' in their_history[-2]:
+            if 'b' in their_history[-1]:
+                return 'b'
+            if 'c' in their_history[-1]:
+                return 'c'
+        if 'c' in their_history[-2]:
+            if 'c' in their_history[-1]:
+                return 'c'
             
     #strategy 3:
     '''if len(my_history)==0:
